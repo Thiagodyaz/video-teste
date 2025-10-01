@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Exclusiva - Transforme Sua Vida</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+
+        .cta-section {
+            background: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-container {
+            margin: 3rem 0;
+        }
+
+        .old-price {
+            font-size: 1.5rem;
+            color: #999;
+            text-decoration: line-through;
+            margin-bottom: 0.5rem;
+        }
+
+        .new-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .discount-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(238, 90, 36, 0.6);
+        }
+
+        .urgency-timer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .timer-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e74c3c;
+        }
+
+        .timer-display {
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+        }
+
+        .benefits-section {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+
+        .benefits-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .benefit-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .new-price {
+                font-size: 2.5rem;
+            }
+            
+            .cta-button {
+                font-size: 1.2rem;
+                padding: 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <h1 class="hero-title">🚀 TRANSFORME SUA VIDA AGORA</h1>
+        <p class="hero-subtitle">Descubra o método revolucionário que já mudou a vida de milhares de pessoas. Assista ao vídeo completo e prepare-se para uma transformação total!</p>
+        
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/4b-vAmDilDs?si=ZdheW3SXgFhL_33-&amp;controls=0&amp;autoplay=1&amp;mute=0&amp;rel=0&amp;showinfo=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;disablekb=1" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 class="cta-title">🎯 OFERTA EXCLUSIVA POR TEMPO LIMITADO</h2>
+        <p class="cta-subtitle">Esta é sua chance única de ter acesso ao método completo com desconto especial. Não perca esta oportunidade!</p>
+        
+        <div class="price-container">
+            <div class="old-price">De R$ 497,00</div>
+            <div class="new-price">Por apenas R$ 97,00</div>
+            <div class="discount-badge">80% DE DESCONTO</div>
+        </div>
+        
+        <button class="cta-button" onclick="handlePurchase()">
+            🔥 QUERO TRANSFORMAR MINHA VIDA AGORA
+        </button>
+        
+        <div class="urgency-timer">
+            <div class="timer-title">⏰ OFERTA EXPIRA EM:</div>
+            <div class="timer-display" id="countdown">23:59:45</div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <h2 class="benefits-title">✨ O QUE VOCÊ VAI RECEBER</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">📚</div>
+                <h3 class="benefit-title">Método Completo</h3>
+                <p class="benefit-description">Acesso total ao sistema passo a passo que já transformou milhares de vidas</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <h3 class="benefit-title">Resultados Garantidos</h3>
+                <p class="benefit-description">Metodologia comprovada com resultados reais e mensuráveis</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <h3 class="benefit-title">Suporte Exclusivo</h3>
+                <p class="benefit-description">Acompanhamento personalizado para garantir seu sucesso</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💎</div>
+                <h3 class="benefit-title">Bônus Especiais</h3>
+                <p class="benefit-description">Materiais extras e ferramentas exclusivas para acelerar seus resultados</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🔒</div>
+                <h3 class="benefit-title">Garantia Total</h3>
+                <p class="benefit-description">30 dias de garantia incondicional - risco zero para você</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3 class="benefit-title">Acesso Imediato</h3>
+                <p class="benefit-description">Comece sua transformação agora mesmo, sem esperar</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Timer de urgência
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            let timeLeft = 24 * 60 * 60; // 24 horas em segundos
+            
+            const timer = setInterval(() => {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                countdownElement.textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                timeLeft--;
+                
+                if (timeLeft < 0) {
+                    clearInterval(timer);
+                    countdownElement.textContent = "00:00:00";
+                }
+            }, 1000);
+        }
+        
+        // Função de compra
+        function handlePurchase() {
+            alert('🎉 Redirecionando para o checkout seguro...\n\nEm um site real, isso levaria para a página de pagamento.');
+        }
+        
+        // Prevenir clique direito no vídeo
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IFRAME') {
+                e.preventDefault();
+            }
+        });
+        
+        // Inicializar timer
+        updateCountdown();
+        
+        // Animações de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observar elementos para animação
+        document.querySelectorAll('.benefit-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98797b68614d645a',t:'MTc1OTI5NTcyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
